@@ -3,6 +3,11 @@ class CoreosCt < Formula
   homepage "https://coreos.com/os/docs/latest/configuration.html"
   url "https://github.com/coreos/container-linux-config-transpiler/archive/v0.9.0.tar.gz"
   sha256 "140c2a5bfd2562a069882e66c4aee01290417f35ef0db06e11e74b2ccf52de7f"
+  on_monterey :or_newer do
+    homepage "https://flatcar-linux.org/docs/latest/provisioning/config-transpiler/"
+    url "https://github.com/flatcar-linux/container-linux-config-transpiler/archive/refs/tags/v0.9.3.tar.gz"
+    sha256 "69f2e1415b81232f87b1daa8ae8734c2b3b0b791f35993f81105b59ebe6f6825"
+  end
   license "Apache-2.0"
 
   bottle do
@@ -13,8 +18,6 @@ class CoreosCt < Formula
     sha256 cellar: :any_skip_relocation, sierra:      "8f09ba9875fe34e55de7fd25514493f41276d5c5e9f3cd37e00288fb6d44323e"
     sha256 cellar: :any_skip_relocation, el_capitan:  "9a48da5217b7e4b57e56702ee884fbc3067ccd895c2144cf7b02571cbcb80b42"
   end
-
-  disable! date: "2022-07-31", because: :repo_archived
 
   depends_on "go" => :build
 
